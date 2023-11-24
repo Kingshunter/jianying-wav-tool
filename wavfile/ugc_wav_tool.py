@@ -38,6 +38,7 @@ def transfer_ugc_wav_file_to_dest_folder(ugc_project_name_wav_file_dict):
 # 根据项目内的朗读音频文件列表拷贝音频文件到目标文件夹中
 def copy_ugc_wav_file_list_to_dest_folder(ugc_wav_file_list, dest_ugc_wav_folder):
     for ugc_wav_file in ugc_wav_file_list:
+
         copy_utils.copy_origin_file_to_dest_folder(ugc_wav_file, dest_ugc_wav_folder)
 
 # 判断目标文件夹是否存在
@@ -130,3 +131,5 @@ def find_jianying_wav_file():
 def transfer_jianying_ugc_wav_file():
     ugc_project_name_wav_file_dict = find_jianying_wav_file()
     transfer_ugc_wav_file_to_dest_folder(ugc_project_name_wav_file_dict)
+
+
