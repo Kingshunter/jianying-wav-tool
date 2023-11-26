@@ -18,7 +18,7 @@ if __name__ == '__main__':
     jianying_config.init_jianying_bu_config()
     full_wav_file_sync_state = jianying_config.get_jianying_bu_config('full_wav_file_sync_state')
     if full_wav_file_sync_state == 0:
-        # ugc_wav_tool.transfer_jianying_ugc_wav_file()
+        ugc_wav_tool.transfer_full_jianying_ugc_wav_file()
         jianying_config.set_jianying_bu_config('full_wav_file_sync_state', 1)
         jianying_config.update_jianying_bu_config('wavfile', 'full_wav_file_sync_state', '1')
     print('watch dog')

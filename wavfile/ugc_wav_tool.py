@@ -22,15 +22,14 @@ elif platform == 3:
 else:
     raise NotImplementedError("not support other platform")
 
-def transfer_ugc_wav_file_to_dest_folder(ugc_project_name_wav_file_dict):
+def transfer_full_ugc_wav_file_to_dest_folder(ugc_project_name_wav_file_dict):
     if ugc_project_name_wav_file_dict:
         for project_name, ugc_wav_file_list in ugc_project_name_wav_file_dict.items():
             print(project_name, ugc_wav_file_list)
             dest_ugc_wav_folder = get_dest_ugc_wav_folder(project_name)
             exists_ugc_wav_folder = cheak_dest_ugc_wav_folder(dest_ugc_wav_folder)
             if exists_ugc_wav_folder:
-                compute_dest_ugc_wav_file_md5_dict(dest_ugc_wav_folder)
-                print(222)
+                continue
             else:
                 os.makedirs(dest_ugc_wav_folder)
                 copy_ugc_wav_file_list_to_dest_folder(ugc_wav_file_list, dest_ugc_wav_folder)
@@ -128,8 +127,8 @@ def find_jianying_wav_file():
     return ugc_project_name_wav_file_dict
 
 # 转移剪影里用户项目中的wav file
-def transfer_jianying_ugc_wav_file():
+def transfer_full_jianying_ugc_wav_file():
     ugc_project_name_wav_file_dict = find_jianying_wav_file()
-    transfer_ugc_wav_file_to_dest_folder(ugc_project_name_wav_file_dict)
+    transfer_full_ugc_wav_file_to_dest_folder(ugc_project_name_wav_file_dict)
 
 
