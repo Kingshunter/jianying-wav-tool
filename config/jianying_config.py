@@ -7,6 +7,10 @@ import os
 
 jianying_bu_config_dict = {}
 
+# 项目名文件夹在同一层级里需要过滤的fd
+jianying_draft_fd_name_filter_list = ['template.json.bak', '.DS_Store', 'template.json',
+                                      'template.tmp', 'template-2.tmp', 'root_meta_info.json', '.recycle_bin']
+
 # 获取剪影配置文件路径
 def get_jianying_config_path():
     # os.path.dirname(sys.argv[0])可以获取项目当前文件夹的相对路径
