@@ -3,6 +3,7 @@
 
 import platform
 
+
 # 获取当前的操作系统类型
 def get_current_platform():
     if platform.system() == 'Windows':
